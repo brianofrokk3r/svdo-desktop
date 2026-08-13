@@ -4,6 +4,8 @@ This repository is primarily the documentation and ticket-tracking home for
 SVDO Desktop, a local Kanban board and agentic project runner. Application
 source is maintained separately.
 
+![SVDO Desktop showing a project board with ticket details and an implementation plan](docs/assets/svdo-desktop-landing-page.png)
+
 - [Read the usage wiki](wiki/Home.md)
 - [Create a useful ticket](docs/creating-tickets.md)
 - [Open the issue tracker](https://github.com/brianofrokk3r/svdo-desktop/issues)
