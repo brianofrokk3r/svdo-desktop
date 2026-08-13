@@ -78,6 +78,38 @@ After installation, run `svdo --help` to verify the CLI. If it is not found,
 open a new terminal or add your package manager's global binary directory to
 `PATH`. Continue with [Getting Started](wiki/Getting-Started.md).
 
+## Desktop commands
+
+Launch Desktop, then initialize projects from their repository directories:
+
+```sh
+svdo desktop
+cd /path/to/project
+svdo init
+```
+
+The Desktop runtime normally chooses an available local port. To require a
+specific port for this launch, set `PORT`:
+
+```sh
+PORT=4101 svdo desktop
+```
+
+Other useful commands in a Desktop workflow are:
+
+```sh
+svdo init [path]                         # register a workspace
+svdo status [path]                       # show its assigned tickets
+svdo backup --destination /path/copy.db  # back up the local database
+svdo version                             # show the installed version
+svdo --help                              # show CLI help
+```
+
+See [Getting Started](wiki/Getting-Started.md) for launch and port details,
+[Tickets and Agent Runs](wiki/Tickets-and-Agent-Runs.md) for run workflows, and
+[Settings and Integrations](wiki/Settings-and-Integrations.md) for Agents and
+Skills.
+
 ## Get help or propose a change
 
 Search existing tickets before opening a new one. Include enough context for
