@@ -3,6 +3,6 @@
 /.joule/
 
 # Local agent instructions and specification workflow artifacts.
-/AGENTS.md
+AGENTS.md
 /specs/
 /.specify/
