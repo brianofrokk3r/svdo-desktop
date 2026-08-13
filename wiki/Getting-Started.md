@@ -11,8 +11,17 @@ svdo desktop
 ```
 
 `svdo desktop` launches the packaged Electron application and its app-owned
-local runtime. If you prefer the local browser experience, `svdo start` starts
-the service and `svdo open` opens its board.
+local runtime. By default, Desktop selects an available loopback port each time
+it starts. To require a particular port, set `PORT` for that launch:
+
+```sh
+PORT=4101 svdo desktop
+```
+
+This is the custom-port setting for the packaged Desktop application. The
+`--backend-port`, `--frontend-port`, `SVDO_PORT_BACKEND`, and
+`SVDO_PORT_FRONTEND` options belong to the separate `svdo start` server/source
+workflow; `svdo desktop` does not accept those flags.
 
 ## Initialize a workspace
 
@@ -27,10 +36,9 @@ During setup, choose the installed agent CLI that should run work. New
 workspaces use the Speckit methodology by default. Workspace configuration is
 scoped to the selected directory; confirm the path before initializing.
 
-Open the workspace and check its state:
+With Desktop running, check the workspace state from any terminal:
 
 ```sh
-svdo open
 svdo status
 ```
 

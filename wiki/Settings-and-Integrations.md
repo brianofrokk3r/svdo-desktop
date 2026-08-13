@@ -13,14 +13,66 @@ installed Codex CLI can remain selected while setup reports that the directory
 is not trusted. Resolve the stated trust or repository condition rather than
 assuming another provider was selected.
 
-## Standards and reusable agents
+## Agents
+
+Open **Agents** with a workspace selected to create and maintain reusable Agent
+definitions. Each Agent has a name, system prompt, and ticket- or project-scoped
+review setting. Depending on ownership and lifecycle state, its card also lets
+you run, edit, duplicate, synchronize, write, or delete the resource. **Write
+file** stores repository Markdown at a path you confirm; its default SVDO path
+is `.joule/agents/<handle>.agent.md`. Imported repository-backed Agents can be
+refreshed when their source Markdown changes.
+
+The active workspace supplies the CLI/provider and model used to execute an
+Agent. Agent definitions do not embed or replace that workspace selection. See
+[Tickets and Agent Runs](Tickets-and-Agent-Runs.md#what-an-agent-is) for manual,
+ticket, project-scope, and automation behavior.
+
+For provider-neutral portable instructions, SVDO also recognizes Agent
+definitions at `agents/<handle>.agent.md`. SVDO may compile provider-native
+projections before a run when the selected CLI supports them. It leaves
+unmanaged or manually diverged files unchanged, so review source warnings
+instead of assuming a file was overwritten.
+
+## Skills
+
+A **Skill** is a reusable instruction module for a focused procedure, convention,
+or capability. Agents and ordinary workspace runs can use Skills: in a supported
+run composer, choose a Skill or type `/skill <handle>`. SVDO resolves that handle
+and adds the Skill's content to that run. Ticket-selected Skills are ephemeral;
+selecting one does not add it permanently to repository instructions or every
+future run.
+
+Open **Skills** to:
+
+- Create a Local-only Skill with a name, handle, description, content, and
+  category.
+- Import supported Skill Markdown from the active repository.
+- Edit resources that their ownership and lifecycle state allow you to edit.
+- Refresh a repository-backed Skill after its source changes.
+- Use **Write file** to persist a Skill to the selected repository.
+- Filter Local-only, repository-backed, synchronized, and Cloud-managed
+  resources and inspect their ownership or sync status.
+
+**Write file** defaults to `.joule/skills/<handle>/SKILL.md`. For
+provider-neutral portable instructions, SVDO also recognizes
+`skills/<handle>/SKILL.md`; scripts, references, and assets used by the Skill
+remain beside it. SVDO compiles or exposes provider-native files according to
+the selected CLI's capabilities. Some providers support Skills natively while
+others receive prompt-resolved content, so keep the selected repository Skill
+file as the canonical source. Repository paths that escape the project,
+including escaping symlinks, are rejected.
+
+## Standards
 
 Standards express conventions that future runs should follow. Apply only the
 standards relevant to a workspace and keep their instructions specific enough
-to verify. Reusable agents can pair those instructions with repeatable prompts.
+to verify. Reusable Agents and Skills can pair those conventions with repeatable
+roles and procedures.
 
-Local agents and standards are not uploaded to Cloud unless explicitly marked
-for synchronization. Review content for secrets before enabling sharing.
+Local Agents, Skills, and Standards are not uploaded to Cloud unless explicitly
+marked for synchronization. Review content and bundled files for secrets before
+enabling sharing.
 
 ## Automations
 
