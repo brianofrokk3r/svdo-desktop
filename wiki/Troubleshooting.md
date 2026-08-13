@@ -28,6 +28,17 @@ Run `svdo --help` first to separate installation from launch problems. If
 run `svdo start`. Record the complete sanitized terminal error if launch still
 fails.
 
+If you launched Desktop on a fixed port and that port is already in use, stop
+the process using it or choose another port:
+
+```sh
+PORT=4102 svdo desktop
+```
+
+Omit `PORT` to let the packaged Desktop runtime choose an available loopback
+port automatically. Do not pass `--backend-port` or `--frontend-port` to
+`svdo desktop`; those flags configure the separate `svdo start` workflow.
+
 ## Agent run cannot start
 
 Confirm the selected CLI is installed and authenticated, its configured model
