@@ -1,0 +1,8 @@
+# Local SVDO/Joule runtime state must never be committed.
+/.svdo/
+/.joule/
+
+# Local agent instructions and specification workflow artifacts.
+/AGENTS.md
+/specs/
+/.specify/
